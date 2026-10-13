@@ -12,8 +12,9 @@
 --ink:#3b0f7a;--violet:#7c3aed;--lilac:#d8c2ff;--mist:#f0e6ff;--pink:#ff6fc1;--blush:#ffd3ec;--white:#fffbfe;
 --display:'Bagel Fat One','Arial Rounded MT Bold','Trebuchet MS',sans-serif;--body:'DM Sans',system-ui,sans-serif}
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--body);overflow-x:hidden}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100%}
+body{margin:0;background:var(--white);color:var(--ink);font:400 18px/1.6 var(--body);overflow-x:hidden;max-width:100%;position:relative}
+@supports(overflow:clip){html,body{overflow-x:clip}}
 body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.09;mix-blend-mode:multiply;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 a{color:inherit}a:focus-visible{outline:4px solid var(--pink);outline-offset:4px;border-radius:6px}
 h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;line-height:.95}
@@ -93,7 +94,7 @@ h1{text-shadow:.045em .06em 0 var(--pink),.09em .12em 0 var(--violet)}
 .cf.pill{width:calc(10px*var(--s));height:calc(30px*var(--s));border-radius:10px}
 .cf.star{width:calc(30px*var(--s));height:calc(30px*var(--s));clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
 @keyframes floaty{to{transform:translate(var(--dx),var(--dy)) rotate(var(--r))}}
-.ribbon{position:relative;z-index:4;margin:-34px -20px 0;background:var(--pink);border-block:4px solid var(--ink);transform:rotate(-2deg);overflow:hidden;white-space:nowrap;box-shadow:0 9px 0 var(--violet)}
+.ribbon{position:relative;z-index:4;margin:-34px -20px 0;max-width:calc(100% + 40px);background:var(--pink);border-block:4px solid var(--ink);transform:rotate(-2deg);overflow:hidden;white-space:nowrap;box-shadow:0 9px 0 var(--violet)}
 .ribbon div{display:inline-block;padding:10px 0;font:400 clamp(24px,4vw,38px) var(--display);color:#fff;-webkit-text-stroke:.07em var(--ink);paint-order:stroke fill;animation:slide 28s linear infinite}
 @keyframes slide{to{transform:translateX(-50%)}}
 .facts{background:radial-gradient(circle,#ffa6da 2.5px,transparent 3px) 0 0/30px 30px,var(--blush)}
